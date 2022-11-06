@@ -1,24 +1,17 @@
 <!DOCTYPE html>
-<html >
+<html lang="en">
 <body style="background-color:powderblue;">
 <head>
-  <meta charset="UTF-8">
-  <title>BMI Predictor</title>
-  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
+  
 </head>
 
 <body>
 	<style>
 	  body {
-			font-family: "Georgia", Times, serif;
+		font-family: "Georgia", Times, serif;
 		}
       div {
-        margin-bottom: 20px;
+        margin-bottom: 25px;
       }
       label {
         display: inline-block;
@@ -36,59 +29,57 @@
 		font-family: "Georgia", Times, serif;
 		font-size: 15px;
 		height: 25px;
-		width : 100px;
+		width : 150px;
 	  }
 	  select {
 		font-family: "Georgia", Times, serif;
 		font-size: 15px;
 		height: 30px;
-		width : 110px;
+		width : 160px;
 	  }
     </style>
-
-	 <div class="login">
-		
-		<h1>BMI Predictor</h1>
-		 <h3> Please enter the below values to predict BMI</h3>
+	 <div class="login" style="text-align: center">
+		<center>
+		<h1>Welcome to BMI Predictor</h1>
+		 <h3> Please enter the values below to predict BMI</h3>
 
 		 <!-- Main Input For Receiving Query to our ML -->
 		<form action="{{ url_for('predict')}}"method="post">
 		<div>
-			<label>Height (in inches)</label>
-			<input type="text" name="height" placeholder="" required="required" />
+			<label>Height (in inches) :</label>
+			<input type="text" name="height" required="required"/>
 		  </div>
 		  <div>
-			<label>Weight (in pounds)</label>
-			<input type="text" name="weight" placeholder="" required="required" />
+			<label>Weight (in pounds) :</label>
+			<input type="text" name="weight" required="required"/>
 		  </div>
 		  <div>
-			<label>Age</label>
-			<input type="text" name="age" placeholder="" required="required" />
+			<label>Age :</label>
+			<input type="text" name="age" required="required"/>
 		  </div>
 		  <div>
-			<label>Gender</label>
+			<label>Gender :</label>
 			<select name="gender">
 				<option value="Female">Female</option>
 				<option value="Male">Male</option>
 			</select>
 		  </div >
+		  <br>
+		  <br>
 		  <div>
-			<button type="submit" class="btn">Predict</button>
+			<button type="submit" class="btn"><b>Predict</b></button>
 		  </div>
 
 		</form>
 
 	   <br>
+	   <p style="color:black; font-size:17px; "><b>{{ predicted_bmi }}</b></p>
+	   
+	   <p style="color:black; font-size:17px;"><b>{{ bmi_reason }}</b></p>
+	   
+	   <p style="color:black; font-size:17px;"><b>{{ ins_quote }}</b></p>
 	   <br>
-	   {{ predicted_bmi }}
-	   <br>
-	   <br>
-	   {{ bmi_reason }}
-	   <br>
-	   <br>
-	   {{ ins_quote }}
-	   <br>
-
+	</center>
 	 </div>
 
 </body>
