@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html >
+<body style="background-color:powderblue;">
+<head>
+  <meta charset="UTF-8">
+  <title>BMI Predictor</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+	<style>
+	  body {
+			font-family: "Georgia", Times, serif;
+		}
+      div {
+        margin-bottom: 20px;
+      }
+      label {
+        display: inline-block;
+        width: 200px;
+        text-align: right;
+      }
+	  button {
+		font-family: "Georgia", Times, serif;
+		font-size: 15px;
+		background-color: #52B2BF;
+		padding: 10px 10px;
+		cursor: pointer;
+	  }
+	  input {
+		font-family: "Georgia", Times, serif;
+		font-size: 15px;
+		height: 25px;
+		width : 100px;
+	  }
+	  select {
+		font-family: "Georgia", Times, serif;
+		font-size: 15px;
+		height: 30px;
+		width : 110px;
+	  }
+    </style>
+
+	 <div class="login">
+		
+		<h1>BMI Predictor</h1>
+		 <h3> Please enter the below values to predict BMI</h3>
+
+		 <!-- Main Input For Receiving Query to our ML -->
+		<form action="{{ url_for('predict')}}"method="post">
+		<div>
+			<label>Height (in inches)</label>
+			<input type="text" name="height" placeholder="" required="required" />
+		  </div>
+		  <div>
+			<label>Weight (in pounds)</label>
+			<input type="text" name="weight" placeholder="" required="required" />
+		  </div>
+		  <div>
+			<label>Age</label>
+			<input type="text" name="age" placeholder="" required="required" />
+		  </div>
+		  <div>
+			<label>Gender</label>
+			<select name="gender">
+				<option value="Female">Female</option>
+				<option value="Male">Male</option>
+			</select>
+		  </div >
+		  <div>
+			<button type="submit" class="btn">Predict</button>
+		  </div>
+
+		</form>
+
+	   <br>
+	   <br>
+	   {{ predicted_bmi }}
+	   <br>
+	   <br>
+	   {{ bmi_reason }}
+	   <br>
+	   <br>
+	   {{ ins_quote }}
+	   <br>
+
+	 </div>
+
+</body>
+</html>
