@@ -3,7 +3,7 @@
 ## Problem Statement:
 BMI plays a crucial role in determining the insurance price quote. The goal of this project is to implement an application so that customers get a quote instantly and this greatly enhances the public perception of the industry.
 
-Detailed documentation can be found in "MLE_Exercise_Prudential.pdf".
+Detailed documentation can be found in "MLE_Exercise_Prudential.pdf" under documents.
 
 ## Dataset:
 The dataset used to build an ML model is "Dummy-Data.csv".
