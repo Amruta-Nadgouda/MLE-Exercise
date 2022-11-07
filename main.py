@@ -137,7 +137,7 @@ display(df.describe(include=['O']))
 # 4. Male customers are 63 in number and Female are 34.
 
 # ### Data Visualization
-# Now that our data is clean , we will look at visualizations and drawing correlations among features and target variable(charges)
+# Now that our data is clean , we will look at visualizations and drawing correlations among features and target variable(BMI)
 
 # In[20]:
 
