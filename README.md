@@ -5,6 +5,10 @@ BMI plays a crucial role in determining the insurance price quote. The goal of t
 
 Detailed documentation can be found in "MLE_Exercise_Prudential.pdf".
 
+## Dataset:
+The dataset used to build an ML model is "Dummy-Data.csv".
+The dataset "testdata.csv" is used exclusively for testing the model.
+
 ## Approach :
 Applying machine learing tasks like Data Exploration, Data Cleaning, Feature Engineering, Model Building and model testing to build a solution that should able to predict the premium of the personal for health insurance.
 
